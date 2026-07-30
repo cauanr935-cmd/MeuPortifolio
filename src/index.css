@@ -46,14 +46,14 @@
 /* Vanity local fonts (OTF) */
 @font-face {
     font-family: 'Vanity';
-    src: url('../assets/fonts/Vanity-Regular.otf') format('opentype');
+    src: url('/static/fonts/Vanity-Light.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Vanity';
-    src: url('../assets/fonts/Vanity-Bold.otf') format('opentype');
+    src: url('/static/fonts/Vanity-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -421,6 +421,15 @@ h3 {
 }
 
 .nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -1250,12 +1259,12 @@ header .hero-subtitle {
     .projects-grid {
         gap: 1rem;
     }
-    /* ===== Acessibilidade: Alto Contraste para as Tags ===== */
-.high-contrast .tag,
-.high-contrast .project-tags .tag {
-    background-color: var(--high-contrast-bg) !important;
-    color: var(--high-contrast-accent) !important;
-    border: 2px solid var(--high-contrast-accent) !important;
-}
-}
 
+    /* ===== Acessibilidade: Alto Contraste para as Tags ===== */
+    .high-contrast .tag,
+    .high-contrast .project-tags .tag {
+        background-color: var(--high-contrast-bg) !important;
+        color: var(--high-contrast-accent) !important;
+        border: 2px solid var(--high-contrast-accent) !important;
+    }
+}

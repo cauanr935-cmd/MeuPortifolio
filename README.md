@@ -1,44 +1,52 @@
 # Meu Portifólio
 
-Portfolio web estático moderno criado com HTML, CSS e JavaScript puros. Este site apresenta a experiência profissional, projetos, qualificações e certificações de Cauan Martins, com foco em uma experiência visual refinada, interações suaves e design responsivo.
+Portfolio web moderno construído com React e JavaScript, servido pelo Vite. Este site apresenta a experiência profissional, projetos, qualificações e certificações de Cauan Martins, com foco em uma experiência visual refinada, interações suaves e design responsivo.
 
 ## 🚀 Destaques
 
 - Layout responsivo com seção hero em duas colunas
 - Tema claro/escuro persistente via `localStorage`
+- Painel de acessibilidade com alto contraste e simulação de daltonismo (protanopia, deuteranopia, tritanopia, acromatopsia)
 - Efeitos modernos em CSS: glassmorphism, hover em imagens com `drop-shadow`, transições suaves
 - Animações de scroll revelando os cartões de conteúdo
 - 3D tilt hover nos projetos (interação premium)
-- Navegação simples com rolagem suave entre seções
+- Efeito de máquina de escrever no título do hero
 
 ## 🧩 Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript (vanilla)
-
-> Nenhuma biblioteca externa ou framework foi utilizado.
+- React 19
+- Vite
+- JavaScript (sem TypeScript)
+- CSS3 (folha de estilos global, sem framework)
 
 ## 📁 Estrutura do projeto
 
-- `index.html` — página principal do portfólio
-- `src/styles.css` — estilos e layout responsivo
-- `src/script.js` — comportamento interativo, tema escuro e scroll suave
-- `assets/` — imagens e recursos visuais usados no site
+- `index.html` — HTML de entrada do Vite
+- `src/main.jsx` — bootstrap da aplicação React
+- `src/App.jsx` — composição das seções da página
+- `src/components/` — um componente por seção/elemento de UI (Header, Hero, Projects, Qualifications, Certifications, Media, About, Footer, AccessibilityPanel, ColorblindFilters)
+- `src/hooks/` — lógica de comportamento (tema, acessibilidade, scroll reveal, tilt 3D, typewriter)
+- `src/data/` — conteúdo das seções orientadas a listas (projetos, qualificações, certificações, mídia)
+- `src/index.css` — estilos e layout responsivo (global, importado em `main.jsx`)
+- `public/static/` — imagens e fontes servidas como arquivos estáticos
 
 ## 💻 Como usar
 
-### Abrir localmente
-
-1. Abra `index.html` no seu navegador.
-2. Ou execute um servidor estático local, por exemplo:
-
 ```bash
 cd /home/inteli/Documentos/Ponderadas/portifolio
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Então abra `http://localhost:8000` no navegador.
+Depois abra o endereço exibido pelo Vite (geralmente `http://localhost:5173`).
+
+### Outros comandos
+
+```bash
+npm run build    # build de produção em dist/
+npm run preview  # serve o build de produção localmente
+npm run lint      # oxlint
+```
 
 ## ✨ Seções do site
 
@@ -46,17 +54,12 @@ Então abra `http://localhost:8000` no navegador.
 - **Projetos** — cards com trabalhos acadêmicos e experiência em desenvolvimento
 - **Qualificações** — principais conhecimentos e cursos técnicos
 - **Certificações** — certificados exibidos com imagens
+- **Na Mídia** — destaques de matérias e reportagens
 - **Sobre** — texto pessoal e contatos
 
 ## 🔧 Personalização
 
-Para substituir a foto de perfil ou imagens do portfólio, adicione o novo arquivo em `assets/` e atualize o caminho no `index.html`.
-
-## 📝 Observações
-
-- O site foi projetado para ser leve e compatível com navegadores modernos
-- A versão escura usa preferências do usuário quando disponível
-- A navegação e interações são implementadas em JavaScript puro para máximo controle e desempenho
+Para substituir a foto de perfil ou imagens do portfólio, adicione o novo arquivo em `public/static/` e atualize o caminho (`/static/...`) no componente ou arquivo de dados correspondente em `src/`.
 
 ## 📬 Contato
 
